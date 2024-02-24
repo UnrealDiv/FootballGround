@@ -7,7 +7,7 @@ const loader = new GLTFLoader();
 
 let mixer;
 loader.load(
-    './footballground3.glb', // or .gltf
+    './footballground2.glb', // or .gltf
     function (gltf) {
         scene.add(gltf.scene);
     },
