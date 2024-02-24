@@ -1,0 +1,11 @@
+*{
+    box-sizing: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+body{
+    background-color: black;
+    padding: 0;
+    border: 0;
+}
