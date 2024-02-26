@@ -39,3 +39,11 @@ h2{
     font-size: 16px;
     color: white;
 }
+@media only screen and (max-width: 600px) {
+    h2 {
+        left: 50%; /* Adjust the horizontal position */
+        top: 90%; /* Adjust the vertical position */
+        font-size: 12px; /* Adjust the font size */
+        color: white; /* Keep the color the same */
+    }
+}
