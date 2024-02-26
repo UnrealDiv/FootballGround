@@ -1,9 +1,30 @@
 import * as THREE from 'three';
+
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 // Create a scene
 const scene = new THREE.Scene();
-const loader = new GLTFLoader();
+const loadingManager = new THREE.LoadingManager();
+const loader = new GLTFLoader(loadingManager);
+
+
+const progressBar = document.getElementById("progress-bar")
+console.log(progressBar);
+
+
+loadingManager.onProgress = function(url,loaded,total){
+    console.log("Started");
+    progressBar.value = (loaded/total)*100;
+}
+
+
+const progressBarContainer = document.querySelector(".progress-bar-container");
+
+loadingManager.onLoad = function(){
+    console.log("loaded");
+    progressBarContainer.style.display = 'none';
+}
+
 
 let mixer;
 loader.load(
@@ -16,7 +37,6 @@ loader.load(
         console.error('Error loading GLTF/GLB file:', error);
     }
 );
-
 
 
 
